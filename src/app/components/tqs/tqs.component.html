@@ -1,0 +1,57 @@
+<div class="TQA" *ngIf="type">
+  <div class="tip">
+    <p>
+      <i
+        >Each Question carries 10marks , Total Score : {{ totalScore }}, pass
+        Marks : {{ passMark }}</i
+      >
+    </p>
+    <p *ngIf="ansStatus" style="color: green">All Correct</p>
+    <p *ngIf="!ansStatus && noOfQuestion >= 2" style="color: orange">
+      Partial Correct
+    </p>
+    <p
+      *ngIf="!ansStatus && noOfQuestion < 2 && noOfQuestion != -1"
+      style="color: red"
+    >
+      Failed
+    </p>
+    <p *ngIf="!ansStatus && noOfQuestion == -1" style="color: blue">
+      All the best For exam
+    </p>
+    <p>Total Scored : {{ noOfQuestion + 1 }}</p>
+  </div>
+  <div class="test-questions">
+    <form (ngSubmit)="getData(form)" #form="ngForm">
+      <div
+        class="questions"
+        *ngFor="let q of Tdata; let indexOfelement = index"
+      >
+        <p>
+          <b>{{ indexOfelement + 1 }} ) &nbsp;{{ q.Question }} </b>
+        </p>
+        <p>Score : {{ q.score }}</p>
+
+        <textarea
+          name="Answer"
+          name="{{ q.Question }}"
+          ngModel
+          rows="10"
+          cols="80"
+        >
+        </textarea>
+        <hr />
+      </div>
+      <br />
+
+      <input type="submit" value="check" class="button-91" />
+    </form>
+  </div>
+  <br />
+  <p>
+   
+      Important Message : Your Answer's are verified by your teacher. After your
+      submission, within in few day's.
+   
+  </p>
+</div>

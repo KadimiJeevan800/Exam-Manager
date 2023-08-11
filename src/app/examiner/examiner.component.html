@@ -1,0 +1,217 @@
+<div class="examiner">
+  <button (click)="editMFormModal()">Modal 1</button> &nbsp; &nbsp;
+  <button (click)="editTFormModal()">Modal 2</button>
+  <!-- sample code  -->
+  <!-- add Modal  -->
+  <app-dailog-box
+    [status]="deleteDailog"
+    (statusOfDailog)="childDataDelete($event)"
+    class="deleteModal"
+  >
+    <header header>
+      <h1>Add the Data</h1>
+    </header>
+    <div body>
+      <h3>Are you sure do you want to delete</h3>
+      <div>
+        <button (click)="send(true)">yes</button> &nbsp;&nbsp;
+        <button (click)="send(false)">No</button>
+      </div>
+    </div>
+    <footer footer><p>Modal</p></footer>
+  </app-dailog-box>
+
+  <!-- add Modal  -->
+  <app-dailog-box
+    [status]="statusOfDailog"
+    (statusOfDailog)="childData($event)"
+    class="addModal"
+  >
+    <header header>
+      <h1>Add the Data</h1>
+    </header>
+    <div body>
+      {{ formData | json }}
+    </div>
+    <footer footer><p>Modal</p></footer>
+  </app-dailog-box>
+  <!-- edit Modal for text -->
+  <app-dailog-box
+    [status]="statusOfDailog2"
+    (statusOfDailog)="childData2($event)"
+    class="editModal-fortext"
+    id="editModal-fortext"
+  >
+    <header header>Heading data</header>
+
+    <div class="edit-form" body>
+      <form (submit)="getAllFormData(form)" #form>
+        <div class="Question">
+          <label for="question">Question</label> : &nbsp;&nbsp;
+          <textarea
+            value="{{ formData?.Question }}"
+            name="question"
+            rows="5"
+            cols="50"
+          >
+          </textarea>
+        </div>
+        <br />
+        <div class="Answer">
+          <label for="Answer">Answer</label> : &nbsp;&nbsp;
+          <textarea
+            value="{{ formData?.Answer }}"
+            name="Answer"
+            rows="5"
+            cols="50"
+          >
+          </textarea>
+        </div>
+        <br />
+        <div class="Answer">
+          <label for="score">Score</label> : &nbsp;&nbsp;
+          <textarea
+            value="{{ formData?.score }}"
+            name="score"
+            rows="1"
+            cols="5"
+          >
+          </textarea>
+        </div>
+        <br />
+        <div class="submit-btn">
+          <!-- <input type="submit" value="edit" class="button" /> -->
+          <button type="submit">Edit</button>
+        </div>
+      </form>
+      <!-- {{ formData | json }} -->
+    </div>
+
+    <footer footer>Footer Data</footer>
+  </app-dailog-box>
+  <!-- edit modal for MCQS -->
+  <app-dailog-box
+    [status]="statusOfDailog3"
+    (statusOfDailog)="childData3($event)"
+    class="editModal-MCQS"
+    id="editModal-MCQS"
+  >
+    <header header>Heading data</header>
+
+    <div class="edit-form" body>
+      <form (submit)="getAllFormTData(form2)" #form2>
+        <div class="Question">
+          <label for="question">Question</label> : &nbsp;&nbsp;
+          <textarea
+            value="{{ formData?.Question }}"
+            name="question"
+            rows="5"
+            cols="50"
+          >
+          </textarea>
+        </div>
+        <br />
+        <div class="options">
+          <label for="options">Options</label> : &nbsp;&nbsp;
+          <!-- {{formData | json}} -->
+          <textarea [value]="formData?.options" name="options" cols="30" rows="3"> </textarea>
+        </div>
+        <br />
+        <div class="Answer">
+          <label for="score">Answer</label> : &nbsp;&nbsp;
+          <textarea
+            value="{{ formData?.Answer }}"
+            name="Answer"
+            rows="1"
+            cols="5"
+          >
+          </textarea>
+        </div>
+        <br />
+        <div class="submit-btn">
+          <!-- <input type="submit" value="edit" class="button" /> -->
+          <button type="submit">Edit</button>
+        </div>
+      </form>
+      <!-- {{ formData | json }} -->
+    </div>
+
+    <footer footer>Footer Data</footer>
+  </app-dailog-box>
+  <!-- ending of code  -->
+  <mat-tab-group class="examiner-tabs">
+    <mat-tab label=" Mutiple Choice Questions " class="tabs-ex">
+      <div class="Mutiple-choice-questions">
+        <!-- <p>{{data1 | json}}</p> -->
+        <h2>&#10003; Mutiple Choice Questions</h2>
+        <div class="questions">
+          <div
+            class="question"
+            *ngFor="let d of data1; let indexOfelement = index"
+          >
+            <h3>
+              <b>Q{{ indexOfelement + 1 }} )</b> {{ d.Question }}
+            </h3>
+            <h4>
+              <b> options : </b>
+              <span *ngFor="let ans of d.options"> {{ ans }}, </span>
+              <p>
+                <b>Ans :</b>
+                <span>{{ d.Answer }}</span>
+              </p>
+            </h4>
+            <div class="q-ctions">
+              <span>
+                <button (click)="editMData(d)">Edit</button>
+              </span>
+              &nbsp;
+              <span>
+                <button (click)="deleteTheData(d)">Delete</button>
+              </span>
+              &nbsp;
+              <span>
+                <button (click)="addTheData(d)">Add</button>
+              </span>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="General Questions" class="tabs-ex">
+      <div class="Text-questions">
+        <!-- <p>{{data2 | json}}</p> -->
+        <h2>General Questions</h2>
+        <div class="questions">
+          <div
+            class="question"
+            *ngFor="let d of data2; let indexOfelement = index"
+          >
+            <p>
+              <b>Q{{ indexOfelement + 1 }} )</b> {{ d.Question }}
+            </p>
+            <p><b>Score : </b>{{ d.score }}</p>
+            <p><b>Ans :</b> {{ d.Answer }}</p>
+            <div class="q-ctions">
+              <span>
+                <button (click)="editTData(d)">Edit</button>
+              </span>
+              &nbsp;
+              <span>
+                <button (click)="deleteTheData(d)">Delete</button>
+              </span>
+              &nbsp;
+              <span>
+                <button (click)="addTheData(d)">Add</button>
+              </span>
+            </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Still in progress " class="tabs-ex">
+      <div class="questions">Additional Data</div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

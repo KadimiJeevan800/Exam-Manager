@@ -1,0 +1,67 @@
+<form #uploadform="ngForm" (ngSubmit)="getData(uploadform)">
+  <div>
+    <label>Enter the Question :{{ dataFromParent }}</label>
+    <input
+      type="text"
+      placeholder="Enter the question "
+      ngModel
+      name="question"
+      style="width: 30%;"
+    />
+  </div>
+
+  <br />
+  <div>
+    <label for="answertype">Type of Answer :</label>
+    <input
+      type="radio"
+      name="answertype"
+      (click)="showTheNextField('mul')"
+      [defaultChecked]="true"
+      id="Mutiple"
+    />
+    <label for="Mutiple"> Mutiple Choice</label>
+
+    <input
+      type="radio"
+      name="answertype"
+      (click)="showTheNextField('text')"
+      id="text"
+    />
+    <label for="text">Text Box</label>
+  </div>
+  <br />
+  <div class="options" *ngIf="!showData">
+    <label>Enter the Options :</label>
+    <br /><br />
+    <input type="text" placeholder="option 1" ngModel name="opt1" />
+    <br /><br />
+    <input type="text" placeholder="option 2" ngModel name="opt2" />
+    <br /><br />
+    <input type="text" placeholder="option 3" ngModel name="opt3" />
+    <br /><br />
+    <input type="text" placeholder="option 4" ngModel name="opt4" />
+    <br /><br />
+
+    <input
+      type="number"
+      placeholder="Enter the right option"
+      ngModel
+      name="optanswer"
+    />
+  </div>
+  <br />
+  <div class="options" *ngIf="showData">
+    <label>Enter the Answer :</label> &nbsp;&nbsp;
+    <!-- <input type="text" placeholder="Answer" ngModel name="Answer" /> -->
+    <textarea placeholder="Answer" ngModel name="Answer" rows="10" cols="30"></textarea>
+    <br /><br />
+    <label>Enter the Marks :</label>&nbsp;&nbsp;
+    <input type="number" placeholder="Enter the Marks" ngModel name="Marks" />
+  </div>
+
+  <br />
+  <div class="submit">
+    <input type="submit" value="Add" class="button-91" />
+  </div>
+</form>

@@ -1,0 +1,75 @@
+<div class="MQA" *ngIf="type">
+  <div class="tip">
+    <p>
+      <i>Each Question carries 1mark , Total Score : {{mdata.length}}  ,pass Marks : {{ passMark }}</i>
+    </p>
+    <p *ngIf="ansStatus" style="color: green">All Correct</p>
+    <p *ngIf="!ansStatus && noOfQuestion >= passMark" style="color: orange">
+      Partial Correct
+    </p>
+    <p
+      *ngIf="!ansStatus && noOfQuestion < passMark && noOfQuestion != -1"
+      style="color: red"
+    >
+      Failed
+    </p>
+    <p *ngIf="!ansStatus && noOfQuestion == -1" style="color: blue">
+      All the best For exam
+    </p>
+    <p>Total Scored : {{ noOfQuestion + 1 }}</p>
+  </div>
+  <div class="test-questions">
+    <form (ngSubmit)="checkAnswer(Qdata)" #Qdata="ngForm">
+      <div class="questions" *ngFor="let q of mdata; let index = index">
+        <p>
+          <b>{{ index + 1 }} ) {{ q.Question }}</b>
+        </p>
+
+        <div
+          class="{{
+            q.Answer == indexOfelement + 1 && submitted ? 'active' : 'not'
+          }}  option"
+          *ngFor="let opt of q.options; let indexOfelement = index"
+        >
+          <input
+            type="radio"
+            value="{{ indexOfelement + 1 }}"
+            name="{{ index }}"
+            ngModel
+            id="{{ 'uniq' + index + '' + indexOfelement }}"
+          />
+          <label for="{{ 'uniq' + index + '' + indexOfelement }}">
+            {{ opt }}
+          </label>
+        </div>
+        <br />
+        <hr/>
+      </div>
+
+      <br />
+
+      <input type="submit" value="check" class="button-91" *ngIf="!submitted" />
+    </form>
+  </div>
+
+  <br />
+  <br />
+  <div class="tip">
+    <p *ngIf="ansStatus" style="color: green">All Correct</p>
+    <p *ngIf="!ansStatus && noOfQuestion >= passMark" style="color: orange">
+      Partial Correct
+    </p>
+    <p
+      *ngIf="!ansStatus && noOfQuestion < passMark && noOfQuestion != -1"
+      style="color: red"
+    >
+      Failed
+    </p>
+    <p *ngIf="!ansStatus && noOfQuestion == -1" style="color: blue">
+      All the best For exam
+    </p>
+    <p>Total Scored : {{ noOfQuestion + 1 }}</p>
+  </div>
+</div>
+
+<!-- <ng-component *ngComponentOutlet="dnds"></ng-component> -->

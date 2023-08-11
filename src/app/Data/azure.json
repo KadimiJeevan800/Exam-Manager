@@ -1,0 +1,66 @@
+[
+    {
+        "id":1,
+        "Question":"You plan to build a new solution in Azure that will use platform as a service (PaaS) products. What should you use to estimate the monthly costs?",
+        "options":["Azure Advisor","Azure Cost Management","Azure Pricing calculator","Total Cost of Ownership (TOC) Calculator"],
+        "Answer":3
+    },
+    {
+        "id":2,
+        "Question":"You need to associate the costs of resources to different groups within an organization without changing the location of the resources.What should you use?",
+        "options":["administrative units","resource groups","resource tags","subscriptions"],
+        "Answer":3
+    },
+    {
+        "id":3,
+        "Question":"What can you use to restrict the deployment of a virtual machine to a specific location?",
+        "options":["Azure AD","Azure Policy","resource groups","resource locks"],
+        "Answer":2
+    },
+    {
+        "id":4,
+        "Question":"What can you use to ensure that a development team can only create virtual machines of a certain size?",
+        "options":["Azure Blueprints","Azure Policy","Cloud Adoption Framework","Conditional Access"],
+        "Answer":2
+    },
+    {
+        "id":5,
+        "Question":"What should you use to access Azure Cloud Shell?",
+        "options":["a web browser","Azure Resource Manager (ARM)","Microsoft Visual Studio Code","the command-line on a local computer"],
+        "Answer":1
+    },
+    {
+        "id":6,
+        "Question":"What should you proactively review and act on to avoid service interruptions, such as service retirements and breaking changes?",
+        "options":["application insights","Azure Monitor ","health advisories ","service issues"],
+        "Answer":3
+    },
+    {
+        "id":7,
+        "Question":"What can you use to automatically detect performance anomalies for web apps?",
+        "options":["Azure Advisor","Azure Application Insights","Azure Cognitive Services","Azure DevOps"],
+        "Answer":2
+    }
+    ,
+    {
+        "id":8,
+        "Question":"What can you use to get notification about an outage in a specific Azure region?",
+        "options":["Azure Advisor","Azure Monitor ","Azure Security Center ","Azure Service Health"],
+        "Answer":4
+    }
+    ,
+    {
+        "id":9,
+        "Question":"What can you use to find information about planned maintenance for Azure services that are critical to your organization?",
+        "options":["Azure Advisor","Azure Monitor ","Azure Service Health ","Log Analytics"],
+        "Answer":3
+    }
+    ,
+    {
+        "id":10,
+        "Question":"What can you apply to an Azure virtual machine to ensure that users cannot change or delete the resource?",
+        "options":["a lock","a tag","a user-assigned managed identity ","Conditional Access"],
+        "Answer":1
+    }
+    
+]

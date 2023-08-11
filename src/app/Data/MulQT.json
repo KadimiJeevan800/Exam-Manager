@@ -1,0 +1,39 @@
+[
+    {
+        "id":1,
+        "Question":"pick a  suitable Database Language",
+        "options":["sql","Python","php","JS"],
+        "Answer":1
+    },
+    {
+        "id":2,
+        "Question":"pick a suitable Programming Language",
+        "options":["Hindi","English","Telugu","JS"],
+        "Answer":4
+    },
+    {
+        "id":3,
+        "Question":"pick a suitable Machine Learning Language",
+        "options":["sql","Python","php","JS"],
+        "Answer":2
+    },
+    {
+        "id":4,
+        "Question":"pick a suitable Speaking Language",
+        "options":["sql","Telugu","php","JS"],
+        "Answer":2
+    },
+    {
+        "id":5,
+        "Question":"pick a suitable Cloud Technology",
+        "options":["AI","Linux","AWS","Devops"],
+        "Answer":3
+    },
+    {
+        "id":6,
+        "Question":"pick a suitable options for JS",
+        "options":["sync","Async ","SDC ","None"],
+        "Answer":2
+    }
+    
+]

@@ -1,0 +1,13 @@
+<div id="myModal" class="modal" *ngIf="status">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <ng-content select="[header]"></ng-content>
+    <hr />
+    <br />
+    <ng-content select="[body]"></ng-content>
+    <hr />
+    <br />
+    <ng-content select="[footer]"></ng-content>
+  </div>
+</div>

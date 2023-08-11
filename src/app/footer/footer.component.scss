@@ -1,0 +1,18 @@
+$color1: #393646;
+$color2: #4f4557;
+$color3: #6d5d6e;
+$color4: #f4eee0;
+
+footer {
+  background-color: $color4;
+  color: $color1;
+  height: 50px;
+  justify-self: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 6;
+  border-top: 3px solid $color3;
+}

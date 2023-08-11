@@ -1,0 +1,20 @@
+<div class="student">
+  <div>
+    <input
+      type="radio"
+      (click)="setQA(true)"
+      name="selectQA"
+      [defaultChecked]="true"
+      id="TQAR"
+    />
+    <label for="TQAR"> General Questions</label>
+    &nbsp; &nbsp;
+    <input type="radio" (click)="setQA(false)" name="selectQA" id="MQAR" />
+    <label for="MQAR"> Multiple choice </label>
+  </div>
+  <br />
+  <!-- TQA -->
+  <app-tqs [Tdata]="data" [type]="show" [passPercent]="passMark"></app-tqs>
+  <!-- MQA  starts from here -->
+  <app-mcqs [type]="!show" [mdata]="data2" [passPercent]="passMark"></app-mcqs>
+</div>
