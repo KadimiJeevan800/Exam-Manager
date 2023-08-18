@@ -1,8 +1,12 @@
 <div class="examiner">
-  <button (click)="editMFormModal()">Modal 1</button> &nbsp; &nbsp;
+  <!-- 
+    <button (click)="editMFormModal()">Modal 1</button> &nbsp; &nbsp;
   <button (click)="editTFormModal()">Modal 2</button>
+ -->
+
   <!-- sample code  -->
-  <!-- add Modal  -->
+
+  <!-- delete Modal  -->
   <app-dailog-box
     [status]="deleteDailog"
     (statusOfDailog)="childDataDelete($event)"
@@ -31,10 +35,16 @@
       <h1>Add the Data</h1>
     </header>
     <div body>
-      {{ formData | json }}
+      <div>
+        <p>{{ formData?.Question }}</p>
+        <!-- <p>{{ formData | json }}</p> -->
+        <!-- <p>{{ formData?.id }}</p> -->
+        <button class="add-to-Question btn">Add</button>
+      </div>
     </div>
-    <footer footer><p>Modal</p></footer>
+    <footer footer><p>Add to Question Paper</p></footer>
   </app-dailog-box>
+
   <!-- edit Modal for text -->
   <app-dailog-box
     [status]="statusOfDailog2"
@@ -45,7 +55,7 @@
     <header header>Heading data</header>
 
     <div class="edit-form" body>
-      <form (submit)="getAllFormData(form)" #form>
+      <form (submit)="getAllFormMData(form)" #form>
         <div class="Question">
           <label for="question">Question</label> : &nbsp;&nbsp;
           <textarea
@@ -89,6 +99,7 @@
 
     <footer footer>Footer Data</footer>
   </app-dailog-box>
+
   <!-- edit modal for MCQS -->
   <app-dailog-box
     [status]="statusOfDailog3"
@@ -114,7 +125,13 @@
         <div class="options">
           <label for="options">Options</label> : &nbsp;&nbsp;
           <!-- {{formData | json}} -->
-          <textarea [value]="formData?.options" name="options" cols="30" rows="3"> </textarea>
+          <textarea
+            [value]="formData?.options"
+            name="options"
+            cols="30"
+            rows="3"
+          >
+          </textarea>
         </div>
         <br />
         <div class="Answer">
@@ -138,6 +155,7 @@
 
     <footer footer>Footer Data</footer>
   </app-dailog-box>
+
   <!-- ending of code  -->
   <mat-tab-group class="examiner-tabs">
     <mat-tab label=" Mutiple Choice Questions " class="tabs-ex">

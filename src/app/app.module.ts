@@ -24,8 +24,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { McqsComponent } from './components/mcqs/mcqs.component';
 import { TqsComponent } from './components/tqs/tqs.component';
 import { NopageComponent } from './components/nopage/nopage.component';
-import {MatDialog, MAT_DIALOG_DATA, MatDialogModule} from '@angular/material/dialog';
 import { DailogBoxComponent } from './components/dailog-box/dailog-box.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './store/counter.reducer';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +58,8 @@ import { DailogBoxComponent } from './components/dailog-box/dailog-box.component
     MatCardModule,
     MatExpansionModule,
     MatTabsModule,
-    
+    MatChipsModule,
+    StoreModule.forRoot({count :counterReducer})
   ],
   providers: [],
   bootstrap: [AppComponent],

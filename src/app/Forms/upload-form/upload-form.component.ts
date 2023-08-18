@@ -16,6 +16,7 @@ export class UploadFormComponent implements OnChanges {
   getData(form: NgForm) {
    
     console.log(form.value);
+   
     console.log(this.showData ? 'Text Box' : 'Multiple Choice');
     this.data = {
       Question: form.value.question,
