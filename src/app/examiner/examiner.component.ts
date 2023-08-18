@@ -12,7 +12,7 @@ import { StudentServiceService } from '../Services/student-service.service';
   selector: 'app-examiner',
   templateUrl: './examiner.component.html',
   styleUrls: ['./examiner.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  // encapsulation: ViewEncapsulation.None,
 })
 export class ExaminerComponent implements OnInit, OnChanges, OnDestroy {
   data1: any;
@@ -49,7 +49,7 @@ export class ExaminerComponent implements OnInit, OnChanges, OnDestroy {
     this.statusOfDailog2 = true;
   }
 
-  getAllFormData(val: any) {
+  getAllFormMData(val: any) {
     // console.log(val);
     console.log(val.question.value);
     console.log(val.Answer.value);

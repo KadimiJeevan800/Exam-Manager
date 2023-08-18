@@ -7,6 +7,9 @@
       ngModel
       name="question"
       style="width: 30%;"
+
+      pattern="/^[a-zA-Z0-9\s]+\?/"
+      title="Please check the validation"
     />
   </div>
 
@@ -62,6 +65,7 @@
 
   <br />
   <div class="submit">
-    <input type="submit" value="Add" class="button-91" />
+    <!-- <input type="submit" value="Add" class="button-91" /> -->
+    <button type="submit" class="button-91">Add</button>
   </div>
 </form>

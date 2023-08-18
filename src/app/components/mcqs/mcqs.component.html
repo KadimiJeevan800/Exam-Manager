@@ -1,7 +1,10 @@
 <div class="MQA" *ngIf="type">
   <div class="tip">
     <p>
-      <i>Each Question carries 1mark , Total Score : {{mdata.length}}  ,pass Marks : {{ passMark }}</i>
+      <i
+        >Each Question carries 1mark , Total Score : {{ mdata.length }} ,pass
+        Marks : {{ passMark }}</i
+      >
     </p>
     <p *ngIf="ansStatus" style="color: green">All Correct</p>
     <p *ngIf="!ansStatus && noOfQuestion >= passMark" style="color: orange">
@@ -43,12 +46,14 @@
           </label>
         </div>
         <br />
-        <hr/>
+        <hr />
       </div>
 
       <br />
 
-      <input type="submit" value="check" class="button-91" *ngIf="!submitted" />
+      <!-- <input type="submit" value="check" class="button-91" *ngIf="!submitted" /> -->
+
+      <button type="submit" class="button-91" *ngIf="!submitted">Check</button>
     </form>
   </div>
 

@@ -1,6 +1,6 @@
 <div>
   <p>Dashboard works are going on ..</p>
-  <mat-slide-toggle >Toggle me!</mat-slide-toggle>
+  <mat-slide-toggle>Toggle me!</mat-slide-toggle>
 
   <mat-accordion>
     <mat-expansion-panel hideToggle>
@@ -38,5 +38,18 @@
     <button>No</button>
   </div>
 
- 
+  <div>
+    <mat-chip-listbox aria-label="Fish selection">
+      <mat-chip-option>One fish</mat-chip-option>
+      <mat-chip-option class="fishchips">Two fish</mat-chip-option>
+      <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
+      <mat-chip-option color="warn">Warn fish</mat-chip-option>
+    </mat-chip-listbox>
+  </div>
 </div>
+
+<h1>{{ storeCounter }}</h1>
+<h2>{{ storeName }}</h2>
+<button class="button-91" (click)="Inc()">Inc</button> &nbsp;&nbsp;
+<button class="button-91" (click)="Dec()">Dec</button> &nbsp;&nbsp;
+<button class="button-91" (click)="rest()">Reset</button> &nbsp;&nbsp;

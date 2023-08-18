@@ -15,7 +15,6 @@ export class StudentServiceService implements OnInit {
     this.tData = TextData;
   }
   ngOnInit(): void {
-   
     console.log(MulData);
   }
 
